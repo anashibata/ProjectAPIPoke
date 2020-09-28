@@ -1,0 +1,25 @@
+body {
+  font-family: Helvetica;    
+}
+
+.logo { grid-area: logo; }
+.search { grid-area: search; }
+.main { grid-area: main; }
+
+.grid-container {
+  display: grid;
+  height: 100vh; 
+  grid-template-areas:
+   'logo search'
+   'logo main ';
+  grid-template-columns: 130px auto  ;
+  grid-template-rows: auto 80vh  ;
+  padding: 20px;
+}
+
+.search {
+  margin-top: 80px;
+  margin-left: 10px;
+}
+
+

@@ -7,11 +7,18 @@ async function getPokemonData () {
         
         //Pokemon description  
         let pokemonDescription = await getDescription(pokemon.species.url);
-        document.getElementById("lb-description").innerHTML = pokemonDescription.flavor_text_entries[0].flavor_text
+ 
+        let i=0
+        let description = []
+        for (i=0; i < 3; i++) {
+            description.push(pokemonDescription.flavor_text_entries[i].flavor_text)
+        }
+        document.getElementById("lb-description").innerHTML = description.join('<br>')
 
-        //Pokemon Translation              
-        let shakespeareTranslation  = await getTranslation(document.getElementById("lb-description").innerHTML)        
-        document.getElementById("lb-translation").innerHTML = shakespeareTranslation.contents.translated
+        //Pokemon Translation     
+        let shakespeareTranslation  = await getTranslation(description.join()) 
+        document.getElementById("lb-translation").innerHTML =  shakespeareTranslation.contents.translated
+
     } catch(error) {
         alert("Occurred an error to retrieve the Pokemon data. "+error)
     }

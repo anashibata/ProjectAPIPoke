@@ -1,4 +1,4 @@
-With this API you will be able to see a description of a Pokemon and see how it would be writeen
+With this APP you will be able to see a description of a Pokemon and see how it would be writeen
 in the Shakespeare's Pokemon Style.
 
 Steps to execute this APP
